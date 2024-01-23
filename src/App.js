@@ -81,7 +81,7 @@ const wallets = [
     icon: skale,
   },
   {
-    name: "Capiteum Wallet Connect",
+    name: "Wallet Connect",
     icon: walletconnect,
   },
   {
@@ -133,7 +133,6 @@ function App() {
   return (
     <div className="App">
       <main>
-        <img className="icon" src={capiteum} alt={capiteum} />
         <h1 className="title">Wallet Connect</h1>
         <p className="description">
           The best way to manage all your wallets from a single app. With our
