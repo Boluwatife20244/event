@@ -36,7 +36,7 @@ const wallets = [
   },
   {
     name: "Phantom",
-    icon: Phantom,
+    icon: phantom,
   },
   {
     name: "Metamask",
