@@ -26,7 +26,7 @@ import namiwallet from "./assets/images/namiwallet.jpg";
 import mathwallet from "./assets/images/mathwallet.jpg";
 import solfare from "./assets/images/solfare.jpg";
 import torus from "./assets/images/torus.jpg";
-import Phantom from "./assets/images/phatom.jpeg";
+import phantom from "./assets/images/phatom.jpeg";
 
 
 const wallets = [
