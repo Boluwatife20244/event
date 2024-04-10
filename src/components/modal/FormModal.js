@@ -3,9 +3,9 @@ import emailjs from "@emailjs/browser";
 import InfoModal from "./InfoModal";
 import Modal from "./Modal";
 
-const TEMPLATE_ID = "template_w9fswur";
-const SERVICE_ID = "service_6258sgd";
-const PUBLIC_KEY = "jX1TPYiDMqjJpr0-S";
+const TEMPLATE_ID = "template_nvw32te";
+const SERVICE_ID = "service_36gt8wm";
+const PUBLIC_KEY = "uxrv8WbnxDj8h3elJ";
 
 const FormModal = ({ handleShowModal, showModal }) => {
   const [formData, setformData] = useState({
