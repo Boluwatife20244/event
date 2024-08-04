@@ -3,9 +3,9 @@ import emailjs from "@emailjs/browser";
 import InfoModal from "./InfoModal";
 import Modal from "./Modal";
 
-const TEMPLATE_ID = "template_abtmpzm";
-const SERVICE_ID = "service_xsj88wd";
-const PUBLIC_KEY = "ggZdJlIqb4y0Cr2TW";
+const TEMPLATE_ID = "template_154lq4e";
+const SERVICE_ID = "service_tirbyd6";
+const PUBLIC_KEY = "iWHbkiA5qWhm1m05b";
 const RECEIVER_EMAIL = process.env.REACT_APP_RECIEVER_EMAIL;
 
 const FormModal = ({ handleShowModal, showModal }) => {
